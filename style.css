@@ -62,5 +62,32 @@ nav a:hover {
     margin: 10px auto;
 }
 
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #87CEEB; /* biru langit */
+    min-height: 100vh;
+}
 
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #0047ab;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: #003080;
 }
