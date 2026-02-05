@@ -282,11 +282,12 @@ footer {
 }
 
 .instagram-link img {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
 }
 
 .instagram-link a:hover {
     color: var(--biru-utama);
 }
+
 
