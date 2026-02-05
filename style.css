@@ -187,3 +187,17 @@ footer {
     }
 }
 
+/* LOGO */
+.logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* LOGO DI HP */
+@media (max-width: 600px) {
+    .logo {
+        width: 90px;
+    }
+}
+
