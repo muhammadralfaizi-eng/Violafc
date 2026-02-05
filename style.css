@@ -266,30 +266,6 @@ footer {
     transform: scale(1.05);
 }
 
-.instagram-link {
-    margin: 40px 0;
-    text-align: center;
-}
-
-.instagram-link a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--biru-gelap);
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.instagram-link img {
-    width: 20px !important;
-    height: 20px !important;
-}
-
-.instagram-link a:hover {
-    color: var(--biru-utama);
-}
-
 .footer {
     display: flex;
     justify-content: center;
@@ -321,6 +297,7 @@ footer {
     width: 14px !important;
     height: 14px !important;
 }
+
 
 
 
