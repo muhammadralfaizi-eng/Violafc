@@ -1,3 +1,9 @@
+:root {
+    --biru-utama: #87CEEB;   /* biru langit */
+    --biru-gelap: #0047ab;  /* biru tua */
+    --biru-hover: #003080;
+    --abu-bg: #f4f8fb;
+}
 /* RESET */
 * {
     box-sizing: border-box;
@@ -180,3 +186,4 @@ footer {
         font-size: 36px;
     }
 }
+
