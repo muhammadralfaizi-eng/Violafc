@@ -302,3 +302,52 @@ h2 {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
+
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+/* GAMBAR */
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    transform: scale(0.8);
+    animation: zoomIn 0.3s ease forwards;
+}
+
+/* TOMBOL CLOSE */
+#lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+#lightbox .close:hover {
+    transform: scale(1.2);
+}
+
+/* ANIMASI */
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
