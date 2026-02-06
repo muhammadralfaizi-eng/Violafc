@@ -2,29 +2,46 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <div style="
-background:#87CEEB;
-padding:20px;
-text-align:center;
-color:#003080;">
-    <h1>VIOLA FC</h1>
-    <p>Punggawa</p>
-</div>
-
     <title>Pemain Viola FC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- HEADER -->
+<div style="background:#87CEEB;padding:20px;text-align:center;color:#003080;">
+    <h1>VIOLA FC</h1>
+    <p>Punggawa</p>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">
+        <img src="viola_logo.png" alt="Viola FC">
+        <span>VIOLA FC</span>
+    </a>
+    <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="pemain.html">Pemain</a>
+    </div>
+</nav>
+
 <h2 style="text-align:center">Daftar Pemain Viola FC</h2>
 
 <div class="container">
     <input type="text" id="search" placeholder="Cari nama pemain..."
-    style="width:100%; padding:10px; font-size:16px;">
+           style="width:100%; padding:10px; font-size:16px;">
 </div>
 
 <div class="container" id="pemain"></div>
 
+<!-- LIGHTBOX -->
+<div id="player-lightbox">
+    <span class="close">&times;</span>
+    <img id="player-lightbox-img">
+</div>
+
+<!-- SCRIPT (SATU SAJA) -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -35,23 +52,25 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => {
         semuaPemain = data;
         tampilkan(data);
+        aktifkanZoom();
     });
 
     function tampilkan(data) {
         let output = "";
         data.forEach(p => {
+            const foto = p["Foto-pemain"] || "viola_logo.png";
+
             output += `
             <div class="card">
-    <img src="${p["Foto-pemain"]}" alt="${p.Nama}" class="foto-pemain">
-
-    <h3>${p.Nama}</h3>
+                <img src="${foto}" alt="${p.Nama}" class="foto-pemain zoom-player">
+                <h3>${p.Nama}</h3>
                 <p><strong>TTL:</strong> ${p.TTL}</p>
                 <p><strong>Usia:</strong> ${p.Usia} tahun</p>
                 <p><strong>Posisi:</strong> ${p.Posisi}</p>
                 <p><strong>Tahun Gabung:</strong> ${p.Tahungabung}</p>
-            </div>
-            `;
+            </div>`;
         });
+
         document.getElementById("pemain").innerHTML = output;
     }
 
@@ -61,28 +80,31 @@ document.addEventListener("DOMContentLoaded", function () {
             p.Nama.toLowerCase().includes(keyword)
         );
         tampilkan(hasil);
+        aktifkanZoom();
     });
+
+    function aktifkanZoom() {
+        const fotos = document.querySelectorAll('.zoom-player');
+        const lightbox = document.getElementById('player-lightbox');
+        const lightboxImg = document.getElementById('player-lightbox-img');
+        const closeBtn = document.querySelector('#player-lightbox .close');
+
+        fotos.forEach(img => {
+            img.onclick = () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+            };
+        });
+
+        closeBtn.onclick = () => lightbox.style.display = 'none';
+
+        lightbox.onclick = e => {
+            if (e.target === lightbox) lightbox.style.display = 'none';
+        };
+    }
 
 });
 </script>
 
 </body>
-    <nav class="navbar">
-    <a href="index.html" class="nav-logo">
-        <img src="viola_logo.png" alt="Viola FC">
-        <span>VIOLA FC</span>
-    </a>
-
-    <div class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="pemain.html">Pemain</a>
-    </div>
-</nav>
-
 </html>
-
-
-
-
-
