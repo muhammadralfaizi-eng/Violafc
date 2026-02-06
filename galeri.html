@@ -30,6 +30,25 @@
     <img src="https://lh3.googleusercontent.com/d/1b3t1Hqm8IQCeRuqwXXWX9qUwHvfgatEf">
     <img src="https://lh3.googleusercontent.com/d/1qoY0gpCfwnHjdCLOcc2IRpcd_Fdu4jBb">
 </div>
+<script>
+    const images = document.querySelectorAll('.galeri img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+</script>
 </body>
+    <div id="lightbox">
+    <img id="lightbox-img">
+</div>
+
 </html>
