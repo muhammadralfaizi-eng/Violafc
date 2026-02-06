@@ -98,11 +98,6 @@ h2 {
     padding: 80px 20px;
 }
 
-.logo {
-    width: 120px;
-    margin-bottom: 15px;
-}
-
 .hero h1 {
     font-size: 48px;
     margin-bottom: 10px;
@@ -169,15 +164,6 @@ h2 {
 .menu-card h3 {
     margin: 10px 0;
     color: #0047ab;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #0047ab;
-    color: white;
-    margin-top: 50px;
 }
 
 /* MOBILE */
@@ -297,3 +283,4 @@ footer {
     width: 14px !important;
     height: 14px !important;
 }
+
